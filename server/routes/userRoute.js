@@ -1,4 +1,6 @@
+console.log("ö")
 const express = require("express");
+console.log("ö")
 const {
   registerUser,
   loginUser,
@@ -17,7 +19,7 @@ const {
   isAuthenticatedUser,
   authorizeRoles,
 } = require("../middlewares/user_actions/auth");
-
+console.log("ö")
 const router = express.Router();
 
 router.route("/register").post(registerUser);
@@ -42,5 +44,6 @@ router
   .get(isAuthenticatedUser, authorizeRoles("admin"), getSingleUser)
   .put(isAuthenticatedUser, authorizeRoles("admin"), updateUserRole)
   .delete(isAuthenticatedUser, authorizeRoles("admin"), deleteUser);
+
 
 module.exports = router;

@@ -1,11 +1,20 @@
+console.log("dilay");
 const User = require("../models/userModel");
+console.log("dilay");
 const asyncErrorHandler = require("../middlewares/helpers/asyncErrorHandler");
+console.log("dilay");
 const sendToken = require("../utils/sendToken");
+console.log("dilay");
 const ErrorHandler = require("../utils/errorHandler");
+console.log("dilay");
 const sendEmail = require("../utils/sendEmail");
-const errorMiddleware = require("../middlewares/helpers/error");
+//console.log("dilay");
+//const errorMiddleware = require("../middlewares/helpers/error");
+console.log("dilay");
 const crypto = require("crypto");
+console.log("dilay");
 const cloudinary = require("cloudinary");
+console.log("dilay");
 
 // Register User
 exports.registerUser = asyncErrorHandler(async (req, res, next) => {
@@ -14,7 +23,6 @@ exports.registerUser = asyncErrorHandler(async (req, res, next) => {
     width: 150,
     crop: "scale",
   });
-
   const { name, email, gender, password } = req.body;
 
   const user = await User.create({
